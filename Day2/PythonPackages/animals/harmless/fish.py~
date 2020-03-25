@@ -1,0 +1,9 @@
+class Fish:
+
+    def __init__(self):
+        self.members = ['Shark', 'Herring', 'Cod', 'Rockfish']
+
+    def printMembers(self):
+        print('These are the animals of the Fish class known to me:')
+        for member in self.members:
+            print('\t%s' % member)
