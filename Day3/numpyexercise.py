@@ -29,8 +29,10 @@ h[::2, ::2] =1
 h[1::2, 1::2] = 1
 print("h =", h)
 
-i
+i_seed = np.array([(0,1),(0,1)])
+i = np.tile(i_seed, (4,4))
+print("i =", i)
 
 j = np.arange(11)
-j [2:7] *=-1
+j [3:9] *=-1
 print("j =", j)
