@@ -1,0 +1,22 @@
+[[574513. 681369. 608372. ... 583559. 668129. 609932.]
+ [581745. 663780. 649781. ... 614421. 673180. 661971.]
+ [577844. 639490. 582288. ... 563441. 615613. 587537.]
+ ...
+ [586968. 697437. 641403. ... 593131. 692046. 684554.]
+ [613844. 668270. 628730. ... 589975. 661016. 653990.]
+ [615913. 707848. 673092. ... 584253. 698568. 672713.]]
+Filename: matmultnew.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     5   50.906 MiB   50.906 MiB   @profile
+     6                             def calculation():
+     7   51.258 MiB    0.352 MiB       X = np.random.randint(0,high=100,size=(N,N))
+     8   51.496 MiB    0.238 MiB       Y = np.random.randint(0,high=100,size=(N,N+1))
+     9   51.977 MiB    0.480 MiB       result = np.zeros((N,N+1))
+    10   52.000 MiB    0.000 MiB       for i in range(N):
+    11   52.000 MiB    0.000 MiB           for j in range(N+1):
+    12   52.000 MiB    0.023 MiB               result[i,j] = np.sum(X[i,:]*Y[:,j])
+    13   52.043 MiB    0.043 MiB       print(result)
+
+

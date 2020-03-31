@@ -1,0 +1,58 @@
+30397485.0
+Filename: euler72.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     4   39.902 MiB   39.902 MiB   @profile
+     5                             def gen_primes(n):
+     6   39.902 MiB    0.000 MiB       l = range(2,n)
+     7   39.902 MiB    0.000 MiB       primes = []
+     8   39.902 MiB    0.000 MiB       for j in range(0,len(l)):
+     9   39.902 MiB    0.000 MiB           p = True
+    10   39.902 MiB    0.000 MiB           for d in primes:
+    11   39.902 MiB    0.000 MiB               if(d > sqrt(l[j])):
+    12   39.902 MiB    0.000 MiB                   break
+    13   39.902 MiB    0.000 MiB               if(l[j] % d == 0):
+    14   39.902 MiB    0.000 MiB                   p = False
+    15   39.902 MiB    0.000 MiB                   break;
+    16   39.902 MiB    0.000 MiB           if(p):
+    17   39.902 MiB    0.000 MiB               primes.append(l[j])
+    18                             
+    19   39.902 MiB    0.000 MiB       return primes
+
+
+Filename: euler72.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    21   39.902 MiB   39.902 MiB   @profile
+    22                             def factorize(n,primes):
+    23   39.902 MiB    0.000 MiB       factors = []
+    24   39.902 MiB    0.000 MiB       init_n = n
+    25   39.902 MiB    0.000 MiB       for p in primes:
+    26   39.902 MiB    0.000 MiB           while(n%p == 0):
+    27   39.902 MiB    0.000 MiB               n = n/p
+    28   39.902 MiB    0.000 MiB               factors.append(p)
+    29   39.902 MiB    0.000 MiB           if(p > sqrt(n)):
+    30   39.902 MiB    0.000 MiB               break
+    31   39.902 MiB    0.000 MiB       if(n > 1):
+    32   39.902 MiB    0.000 MiB           factors.append(n)
+    33   39.902 MiB    0.000 MiB       return factors
+
+
+Filename: euler72.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    50   39.902 MiB   39.902 MiB   @profile
+    51                             def fast_phi(n,primes):
+    52   39.902 MiB   39.902 MiB       factors = factorize(n,primes)
+    53   39.902 MiB    0.000 MiB       phi = factors[0]-1
+    54   39.902 MiB    0.000 MiB       for i in range(1,len(factors)):
+    55   39.902 MiB    0.000 MiB           if(factors[i] == factors[i-1]):
+    56   39.902 MiB    0.000 MiB               phi *= (factors[i]-1)*(factors[i])/(factors[i]-1)
+    57                                     else:
+    58   39.902 MiB    0.000 MiB               phi *= (factors[i]-1)
+    59   39.902 MiB    0.000 MiB       return phi
+
+

@@ -1,0 +1,47 @@
+Filename: matmult.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     8   39.727 MiB   39.727 MiB   @profile
+     9                             def makeX():
+    10   40.336 MiB    0.000 MiB       for i in range(N):
+    11   40.336 MiB    0.133 MiB           X.append([random.randint(0,100) for r in range(N)])
+    12   40.336 MiB    0.000 MiB       return X
+
+
+Filename: matmult.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    16   40.336 MiB   40.336 MiB   @profile
+    17                             def makeY():
+    18   40.965 MiB    0.000 MiB       for i in range(N):
+    19   40.965 MiB    0.254 MiB           Y.append([random.randint(0,100) for r in range(N+1)])
+    20   40.965 MiB    0.000 MiB       return Y
+
+
+Filename: matmult.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    24   40.965 MiB   40.965 MiB   @profile
+    25                             def makeresult():
+    26   41.430 MiB    0.000 MiB       for i in range(N):
+    27   41.430 MiB    0.066 MiB           result.append([0] * (N+1))
+    28   41.430 MiB    0.000 MiB       return result
+
+
+Filename: matmult.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    31   41.430 MiB   41.430 MiB   @profile
+    32                             def iteration(X,Y):
+    33   42.859 MiB    0.000 MiB       for i in range(len(X)):
+    34                                     # iterate through columns of Y
+    35   42.859 MiB    0.000 MiB           for j in range(len(Y[0])):
+    36                                         # iterate through rows of Y
+    37   42.859 MiB    0.062 MiB               for k in range(len(Y)):
+    38   42.859 MiB    0.008 MiB                   result[i][j] += X[i][k] * Y[k][j]
+
+

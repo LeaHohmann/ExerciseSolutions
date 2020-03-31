@@ -1,0 +1,54 @@
+Wrote profile results to matmult.py.lprof
+Timer unit: 1e-07 s
+
+Total time: 0.285663 s
+File: matmult.py
+Function: makeX at line 8
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     8                                           @profile
+     9                                           def makeX():
+    10       251       1439.0      5.7      0.1      for i in range(N):
+    11       250    2855187.0  11420.7     99.9          X.append([random.randint(0,100) for r in range(N)])
+    12         1          4.0      4.0      0.0      return X
+
+Total time: 0.335319 s
+File: matmult.py
+Function: makeY at line 16
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    16                                           @profile
+    17                                           def makeY():
+    18       251       1716.0      6.8      0.1      for i in range(N):
+    19       250    3351468.0  13405.9     99.9          Y.append([random.randint(0,100) for r in range(N+1)])
+    20         1          6.0      6.0      0.0      return Y
+
+Total time: 0.0005278 s
+File: matmult.py
+Function: makeresult at line 24
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    24                                           @profile
+    25                                           def makeresult():
+    26       251        753.0      3.0     14.3      for i in range(N):
+    27       250       4521.0     18.1     85.7          result.append([0] * (N+1))
+    28         1          4.0      4.0      0.1      return result
+
+Total time: 18.0233 s
+File: matmult.py
+Function: iteration at line 31
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    31                                           @profile
+    32                                           def iteration(X,Y):
+    33       251       1407.0      5.6      0.0      for i in range(len(X)):
+    34                                                   # iterate through columns of Y
+    35     63000     237423.0      3.8      0.1          for j in range(len(Y[0])):
+    36                                                       # iterate through rows of Y
+    37  15750250   55556310.0      3.5     30.8              for k in range(len(Y)):
+    38  15687500  124437577.0      7.9     69.0                  result[i][j] += X[i][k] * Y[k][j]
+
