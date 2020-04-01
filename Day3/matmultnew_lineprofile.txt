@@ -1,0 +1,23 @@
+[[654236 633962 621063 ... 660995 624630 630953]
+ [618680 620866 613991 ... 611116 593080 622478]
+ [662367 615079 626530 ... 676091 633794 641811]
+ ...
+ [674265 623744 635367 ... 655476 632053 633575]
+ [657548 631350 601518 ... 662737 633047 626096]
+ [591074 556716 578021 ... 598870 573980 579846]]
+Wrote profile results to matmultnew.py.lprof
+Timer unit: 1e-07 s
+
+Total time: 0.0256658 s
+File: matmultnew.py
+Function: calculation at line 5
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     5                                           @profile
+     6                                           def calculation():
+     7         1       7838.0   7838.0      3.1      X = np.random.randint(0,high=100,size=(N,N))
+     8         1       6576.0   6576.0      2.6      Y = np.random.randint(0,high=100,size=(N,N+1))
+     9         1     235933.0 235933.0     91.9      result = np.matmul(X,Y)
+    10         1       6311.0   6311.0      2.5      print(result)
+
